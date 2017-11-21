@@ -6,7 +6,7 @@ class Game
   end
 
   def play
-    case 
+    case
     when @hand1 == 'rock' && @hand2 == 'paper'
         return "Paper wins!"
       when @hand1 == 'paper' && @hand2 == 'rock'
@@ -17,8 +17,10 @@ class Game
           return "Rock wins!"
       when @hand1 == 'scissors' && @hand2 == 'paper'
           return "Scissors wins!"
-      else @hand1 == 'paper' && @hand2 == 'scissors'
+      when @hand1 == 'paper' && @hand2 == 'scissors'
           return "Scissors wins!"
+      when @hand1 == @hand2
+          return "It's a tie!"
     end
   end
 
