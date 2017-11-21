@@ -4,7 +4,8 @@ require_relative ('./models/game')
 
 get '/:hand1/:hand2' do
   game = Game.new(params[:hand1], params[:hand2])
-  return "#{game.play}"
+  @answer = game.play
+  erb(:result)
 end
 
 # get '/:hand1/:hand2' do
