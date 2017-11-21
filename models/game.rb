@@ -24,9 +24,9 @@ class Game
   #   end
   # end
 
-  def initialize(elements)
-    @player1_hand = elements[:player1_hand]
-    @player2_hand = elements[:player2_hand]
+  def initialize(objects)
+    @player1_hand = objects[:player1_hand]
+    @player2_hand = objects[:player2_hand]
   end
 
   def play
@@ -47,4 +47,6 @@ class Game
       return 'Everybody wins'
     end
   end
+
+
 end
