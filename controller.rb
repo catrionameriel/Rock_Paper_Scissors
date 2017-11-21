@@ -2,11 +2,11 @@ require ('sinatra')
 require ('sinatra/reloader')
 require_relative ('./models/game')
 
-get '/play/:hand1/:hand2' do
-  game = Game.new(params[:hand1], params[:hand2])
-  @answer = game.play
-  erb(:result)
-end
+# get '/play/:hand1/:hand2' do
+#   game = Game.new(params[:hand1], params[:hand2])
+#   @answer = game.play
+#   erb(:result)
+# end
 
 get '/' do
   erb(:home)
@@ -18,6 +18,12 @@ end
 
 get '/play' do
   erb(:play)
+end
+
+get '/play/:hand1/:hand2' do
+  game = Game.new( {player1_hand: params[:hand1], player2_hand: params[:hand2] } )
+  @answer = game.play
+  erb(:result)
 end
 
 # get '/:hand1/:hand2' do
